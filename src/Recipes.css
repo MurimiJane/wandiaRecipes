@@ -1,0 +1,53 @@
+.saladsection{
+    width:100%;
+    height:55vh;
+    background-image: url(./Images/salad.jpg);
+    background-size: cover;
+    background-position: top;
+}
+
+.saladsection h1{
+    font-size:100px;
+    color:white;
+    margin-top: 10vh;
+    margin-left:10%;
+}
+
+.chickensection{
+    width:100%;
+    height:55vh;
+    background-image:url(./Images/chicken.jpg);
+    background-size: cover;
+
+}
+
+.chickensection h1{
+    display: flex;
+    justify-content: right;
+    font-size: 90px;
+    color: white;
+    padding-right:16%;
+    padding-top:10vh;
+}
+
+.chickenintro{
+margin-left: 50%;
+margin-top:10vh;
+}
+
+
+.chickenintro h1{
+font-size: 70px;
+color:white;
+}
+
+.Simplemealssec{
+    width:100%;
+    height:55vh;
+    background-image: url(./Images/Simple\ meals.jpg);
+    background-size: cover;
+}
+.section2{
+    display: flex;
+    flex-direction: column;
+}
