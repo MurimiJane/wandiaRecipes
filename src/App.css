@@ -1,8 +1,6 @@
-
-
-.App a{
-color: white;
-text-decoration: none;
+.App a {
+  color: white;
+  text-decoration: none;
 }
 
 .section1 {
@@ -59,20 +57,20 @@ text-decoration: none;
   font-size: 70px;
 }
 
-.section2 {
+.Section2 {
   width: 100%;
   height: 100vh;
   padding-top: 8vh;
   text-align: center;
- /* background: #0b0c10;*/
+  /* background: #0b0c10;*/
 
-background-color: #484848;
+  background-color: #fdfbfb;
   display: flex;
   justify-content: space-between;
 }
 
-.section2 h1{
-  color:white;
+.section2 h1 {
+  color: white;
 }
 
 .categories {
@@ -88,11 +86,12 @@ background-color: #484848;
 
 }
 
+/*
 .container1 {
   width: 310px;
   height: 45vh;
   border-radius: 30px;
-  background-color: rgba(250, 45, 148, 0.884);
+  background-color: rgb(96, 216, 224);
   text-align: center;
   display: flex;
   justify-content: center;
@@ -103,7 +102,7 @@ background-color: #484848;
   width: 310px;
   height: 45vh;
   border-radius: 30px;
-  background-color: rgba(250, 45, 148, 0.884);
+  background-color: rgb(96, 216, 224);
   text-align: center;
   display: flex;
   justify-content: center;
@@ -114,7 +113,7 @@ background-color: #484848;
   width: 310px;
   height: 45vh;
   border-radius: 30px;
-  background-color: rgba(250, 45, 148, 0.884);
+  background-color: rgb(96, 216, 224);
   text-align: center;
   display: flex;
   justify-content: center;
@@ -125,18 +124,18 @@ background-color: #484848;
   width: 310px;
   height: 45vh;
   border-radius: 30px;
-  background-color: rgba(250, 45, 148, 0.884);
+  background-color: rgb(96, 216, 224);
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.container1 :hover {
+.container1 {
   background-image: url(./Images/saladbg.jpg);
   background-size: cover;
   width: 310px;
-  height: 45vh;
+  height: 45.8vh;
   border-radius: 30px;
   text-align: center;
   color: black;
@@ -146,11 +145,11 @@ background-color: #484848;
   cursor: pointer;
 }
 
-.container2 :hover {
+.container2 {
   background-image: url(./Images/mealsbg.jpg);
   background-size: cover;
   width: 310px;
-  height: 45vh;
+  height: 45.8vh;
   border-radius: 30px;
   text-align: center;
   color: black;
@@ -160,11 +159,11 @@ background-color: #484848;
   cursor: pointer;
 }
 
-.container3 :hover {
+.container3 {
   background-image: url(./Images/chickenbg.jpg);
   background-size: cover;
   width: 310px;
-  height: 45vh;
+  height: 45.8vh;
   border-radius: 30px;
   text-align: center;
   color: black;
@@ -175,11 +174,11 @@ background-color: #484848;
 }
 
 
-.container4 :hover {
+.container4 {
   background-image: url(./Images/coffeebg.jpg);
   background-size: cover;
   width: 310px;
-  height: 45vh;
+  height: 45.8vh;
   border-radius: 30px;
   text-align: center;
   color: white;
@@ -187,6 +186,11 @@ background-color: #484848;
   justify-content: center;
   align-items: top;
   cursor: pointer;
+}
+
+.section3{
+  width:100%;
+  height:100vh;
 }
 
 .section4 {
@@ -202,27 +206,171 @@ background-color: #484848;
 }
 
 .footer {
-  height: 50vh;
-  background-color: rgba(0, 0, 0, 0.918);
-  color: white;
+  height: 80vh;
+  background-color:#242329;
+  color: rgb(247, 5, 126);
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 2vh;
 }
+
+.feedback {
+  padding-left: 7%;
+}
+
+.contacts {
+  padding-top: 8%;
+  padding-right: 13%;
+  color:white;
+
+}
+
+.name{
+display: flex;
+align-items: center;
+}
+
+.phone{
+  display: flex;
+  align-items: center;
+}
+
+.gmail{
+  display: flex;
+  align-items: center;
+}
+
+.contacts p {
+  font-size: 16px;
+}
+
+.contactsBtn {
+  display: flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.rounded-lg {
+  width: 25px;
+  height: 3vh;
+}
+
+.eclipse4 {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #e4006e;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.div2 {
+  margin-right: 13%;
+  margin-top: 0;
+}
+
+.input-tab {
+  position: relative;
+  margin-bottom: 5%;
+
+}
+
+.input {
+  padding: 10px;
+  width: 400px;
+  height: 6vh;
+  border: none;
+  border-radius: 20px;
+  font: inherit;
+  color: white;
+  background-color: transparent;
+  outline: 2px solid white;
+}
+
+.input-label {
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(10px, 10px);
+  transition: transform.25s;
+}
+
+.input:focus+.input-label,
+.input:valid+.input-label {
+  transform: translate(10px, -14px) scale(0.8);
+  color: white;
+  padding-inline: 5px;
+  background: #242329;
+  border: 2px solid #e4006e;
+
+}
+
+.input:is(:focus, :valid) {
+  outline-color: #e4006e;
+
+}
+
+.nametab {
+  width: 600px;
+}
+
+.submit {
+  width: 100px;
+  height: 5vh;
+  font-size: 15px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #e4006e;
+  border-radius: 50px;
+}
+
+.submit:hover {
+  cursor: pointer;
+  box-shadow: 5px 3px 3px 3px rgb(53, 53, 53);
+}
+
+
+.msgtab {
+  height: 30vh;
+}
+/*end footer styling*/
 
 /*blog page styling*/
-.section1blog{
+.section1blog {
   width: 100%;
-  height: 91vh;
-  background-color: orchid;
-  
+  height: 90vh;
+  background-color: #29323c;
+  background-image: linear-gradient(160deg, #29323c 0%, #485563 100%);
+  ;
+
 }
 
-.title{
+.faithImg {
+  height: 80vh;
+
+}
+
+.title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
+.title h1 {
+  width: 70vh;
+  height: 60vh;
+  font-size: 80px;
+  padding-left: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .prologue {
   width: 600px;
@@ -233,5 +381,55 @@ background-color: #484848;
   padding: 40px;
   /* background-color: rgba(128, 128, 128, 0.562); */
   background-color: white;
-  border:1px solid black;
+  border: 1px solid black;
 }
+
+.section3blog{
+  width: 100vh;
+  height: 80vh;
+
+}
+
+.Culinary {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 15vh;
+
+}
+
+.CulinaryPassion {
+  width: 35vh;
+
+}
+
+.CulinaryInspiration {
+  width: 35vh;
+}
+
+.Welcome {
+  width: 35vh;
+}
+
+/*styling recipe container*/
+.recipe-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+.recipe-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  width: 180vh;
+  height: 120vh;
+  text-align: center;
+
+}
+
+/*end styling recipe container*/

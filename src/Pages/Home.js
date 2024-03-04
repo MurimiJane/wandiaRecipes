@@ -19,12 +19,12 @@ function Home() {
                                 <br>
                                 </br> WITH WANDIA</h1>
 
-
+    
                         </div>
 
                     </div>
 
-                    <div className="section2">
+                    <div className="Section2" id="Categories">
 
                         <div className="categories">
                             <h1>Recipes by categories</h1>
@@ -46,13 +46,13 @@ function Home() {
                                 </div>
                             </div>
                         </div>
-
-
-
-
                     </div>
 
         
+                    <div className="section3">
+                    <h2>Feedback</h2>
+                    <p>Feedback will appear here</p>
+                    </div>
 
                     <div className="section4">
 

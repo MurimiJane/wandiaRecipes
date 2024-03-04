@@ -1,47 +1,41 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import '../Recipes.css';
 import NavBar from '../Components/Navbar';
-import { toast, ToastContainer } from 'react-toastify'
-import { getFirestore } from 'firebase/firestore'
-import 'react-toastify/dist/ReactToastify.css';
-import Carousel from 'react-bootstrap/Carousel';
-import '../firebaseConfig';
-import { db } from '../firebaseConfig';
-import { doc, addDoc, collection, query, where, getDocs } from "firebase/firestore";
+import Footer from '../Components/Footerm';
+
+const chickenData = [
+
+];
+function RecipeCard({ title, ingredients, instructions }) {
+    return (
+        <div className="recipe-card">
+            <h2>{title}</h2>
+            <h3>Ingredients:</h3>
+            <ul>
+                {ingredients.map((ingredient, index) => (
+                    <li key={index}>{ingredient}</li>
+                ))}
+            </ul>
+            <h3>Instructions:</h3>
+            <div>{instructions}</div>
+        </div>
+    );
+}
 
 function Chickenmeals() {
 
-    const [recipeName, setRecipeName] = useState("");
-    const [ingredients, setingredients] = useState("");
-    const [method, setMethod] = useState("");
-
-    useEffect(() => {
-
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-
-        const q = query(collection(db, 'recipe'), where("Category", "==", "ChickenMeals"));
-
-        getDocs(q).then((QuerySnapshot) => {
-            QuerySnapshot.forEach((doc) => {
-
-                const recipeName = doc.data.RecipeName;
-                const Ingredients = doc.data.Ingredients;
-                const Method = doc.data.method;
-
-                //setLoggedInUser(userEmail);
-                setRecipeName(recipeName);
-                setingredients(Ingredients);
-                setMethod(Method);
-            })
-        })
-
-
-
-    }, [])
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    };
 
     return (
-
         <div className='chicken'>
 
             <div className='chickensection'>
@@ -49,23 +43,25 @@ function Chickenmeals() {
                 <h1>Chicken Meals</h1>
             </div>
 
-            <div className='chickenintro'>
-                <h1>Chicken Meals</h1>
-                <div className='container'>
-                    <p>{recipeName}</p>
+            <div className='section2'>
+                <div className='Slider'>
+                    <Slider {...settings}>
+                        {chickenData.map((recipe) => (
+                            <RecipeCard
+                                key={recipe.id}
+                                title={recipe.title}
+                                ingredients={recipe.ingredients}
+                                instructions={recipe.instructions}
+                            />
+                        ))}
+                    </Slider>
                 </div>
+            </div>
 
-
-                <p>{ingredients}</p>
-                <p>{method}</p>
-
-
-
+            <div className="section3">
+                <Footer />
             </div>
         </div>
-
-
-
     )
 }
 
