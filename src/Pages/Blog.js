@@ -8,12 +8,12 @@ import Footer from "../Components/Footerm";
 function App() {
 
   return (
-    <div className="App">
+    <div style={{ fontFamily: 'Megante' }} className="App">
       <div className="section1blog">
         <Navbar />
         <div className="title">
           <div>
-            <h1 className="text-center p-4 mt-3  text-white">Faith Wandia</h1>
+            <h1 className="faithName text-center p-4 mt-3  text-white">Faith Wandia</h1>
           </div>
 
           <img src={myimg} className="faithImg" />
@@ -21,13 +21,14 @@ function App() {
         </div>
 
 
-        <div className="container my-4 mx-4 bg-orange-200">
+        {/*<div className="container my-4 mx-4 bg-orange-200">
           <p>Loreum Ipsum</p>
-        </div>
+  </div>*/}
 
       </div>
       <div className="section2blog">
         <div className="prologue">
+          <h2 className="prologuehead">Light note from Wandia</h2>
           <p>"This is a pdf cook book that is dedicated
             to all the people that love cooking and
             find cooking therapeutic. It's a collection of 34 recipes that I have tried and have worked out pretty
@@ -44,6 +45,7 @@ function App() {
 
       <div className="Culinary">
       <div className="CulinaryPassion">
+      <h2>Culinary Passion</h2>
       <h3>
       Wandia is a passionate chef with a love for creating memorable culinary experiences.
       </h3>
@@ -51,6 +53,7 @@ function App() {
       </div>
 
       <div className="CulinaryInspiration">
+      <h2>Culinary Inspiration</h2>
       <h3>
       My recipes are inspired by a rich tapestry of flavors from different cultures.
       </h3>
@@ -58,6 +61,7 @@ function App() {
       </div>
 
       <div className="Welcome">
+      <h2>Welcome to the journey</h2>
       <h3>
       Join Wandia on a journey through a world of delectable dishes and gastronomical delights.
       </h3>

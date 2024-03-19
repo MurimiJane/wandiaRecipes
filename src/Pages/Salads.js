@@ -80,14 +80,23 @@ function RecipeCard({ title, ingredients, instructions }) {
   return (
     <div className="recipe-card">
       <h2>{title}</h2>
-      <h3>Ingredients:</h3>
+      
+      <div className='mainRecipesBox'>
+      <div className='ingredientsBox'>
+      <h3>Ingredients</h3>
       <ul>
         {ingredients.map((ingredient, index) => (
           <li key={index}>{ingredient}</li>
         ))}
       </ul>
-      <h3>Instructions:</h3>
+      </div>
+
+       <hr></hr>
+      <div className='instructionsBox'>
+      <h3>Instructions</h3>
       <div>{instructions}</div>
+      </div>
+      </div>
     </div>
   );
 }
@@ -125,7 +134,7 @@ function Salads() {
         </div>
       </div>
 
-      <div className="section3">
+      <div className="section4">
         <Footer />
       </div>
     </div>

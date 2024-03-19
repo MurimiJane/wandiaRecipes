@@ -10,12 +10,12 @@ import Button from 'react-bootstrap/Button';
 function Home() {
   
             return (
-                <div className="App">
+                <div style={{ fontFamily: 'Megante' }} className="App">
                     <div className="section1">
                         <Navbar />
 
                         <div className="intro">
-                            <h1>COOK
+                            <h1 style={{ fontFamily: 'Megante' }}>COOK
                                 <br>
                                 </br> WITH WANDIA</h1>
 

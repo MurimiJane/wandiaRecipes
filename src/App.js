@@ -8,6 +8,8 @@ import Simplemeals from './Pages/Simplemeals';
 import Coffee from './Pages/Coffee';
 import Dashboard from './Pages/Dashboard';
 import Login from './Pages/Login';
+import Navbar from './Components/Navbar';
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -26,8 +28,10 @@ function App() {
           <Route path="/coffee" element={<Coffee/>}/>
           <Route path="/dashboard" element={<Dashboard/>}/>
           <Route path="/login" element={<Login/>}/>
-
-
+          {/*<Route path="/section2" component={<Section2/>} />
+          <Route path="/section3" component={<Section3/>} />
+  <Route path="/section4" component={<Section4/>} />*/}
+          <Route path="/Navar" component={<Navbar/>} />
 
         </Routes>
       </BrowserRouter>
