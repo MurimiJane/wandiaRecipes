@@ -16,6 +16,7 @@ function Footerm() {
     const [animal, setAnimal] = useState(" ")
     const [msg, setMsg] = useState(" ")
     const [result, setResults] = useState([])
+    const history = useHistory();
 
    
   const handleSubmit = (e) => {
