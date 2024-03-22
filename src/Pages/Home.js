@@ -10,7 +10,8 @@ import Button from 'react-bootstrap/Button';
 
 function Home() {
    const location = useLocation();
-  const inputData = new URLSearchParams(location.search).get('data');
+  const animal = new URLSearchParams(location.search).get('data');
+    const msg = new URLSearchParams(location.search).get('data');
   
             return (
                 <div style={{ fontFamily: 'Megante' }} className="App">
