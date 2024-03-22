@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import herName from '../Images/icons8-woman-64.png'
 import email from '../Images/gmail.svg'
@@ -12,18 +13,24 @@ function Footerm() {
     const userMessageRef = useRef();
 
     //setting data to h1
-    const [animal, setAnimal] = useState("Chiwawa")
-    const [msg, setMsg] = useState("Chiwawa")
+    const [animal, setAnimal] = useState(" ")
+    const [msg, setMsg] = useState(" ")
     const [result, setResults] = useState([])
 
-
+   
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Navigate to the output page with the input data
+    history.push(`/?data=${animal}`);
+  };
 
 
     function submit() {
         const theName = userNameRef.current.value;
-
+        const theMessage = userMessageRef.current.value;
         //show the data here
         setAnimal(theName)
+         setMsg(theMessage)
     }
 
 
@@ -50,10 +57,9 @@ function Footerm() {
                     </div>
 
                     <button className="submit" onClick={submit}>Add Name</button>
-                    <button className="submit" onClick={passdata} >Submit</button>
+                    <button className="submit" onClick={submit} >Submit</button>
 
-                    <h1>{animal}</h1>
-                    <h1>{msg}</h1>
+                   
 
                 </div>
 
