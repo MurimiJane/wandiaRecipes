@@ -69,7 +69,7 @@ function Dashboard() {
                     <input type="text" ref={nameRef} placeholder='Enter recipe name' /><br></br><br></br>
                     <input type="text" ref={ingredientsRef} placeholder='Enter recipe ingredients' /><br></br><br></br>
                     <input type="text" ref={methodRef} placeholder='Enter cooking method' /><br></br><br></br>
-                    <select name="" ref={categoryRef} class="form-control" placeholder='Select Recipe Category'>
+                    <select name="" ref={categoryRef} className="form-control" placeholder='Select Recipe Category'>
                         <option value="ChickenMeals">Chicken Meals</option>
                         <option value="Salads">Salads</option>
                         <option value="Coffee">"Coffee</option>

@@ -39,14 +39,14 @@ function Footerm() {
                 <div className="feedback">
                     <h1>Give me your feedback</h1>
                     <br></br>
-                    <div class="input-tab nametab">
-                        <input type="text" id="fullname" required class="input nametab" ref={userNameRef} />
-                        <label for="fullname" class="input-label">Enter your full name</label>
+                    <div className="input-tab nametab">
+                        <input type="text" id="fullname" required className="input nametab" ref={userNameRef} />
+                        <label htmlFor="fullname" className="input-label">Enter your full name</label>
                     </div> 
 
-                    <div class="input-tab ">
-                        <input type="text" id="msg" required class="input msgtab" ref={userMessageRef}/>
-                        <label for="msg" class="input-label">Enter Your message</label>
+                    <div className="input-tab ">
+                        <input type="text" id="msg" required className="input msgtab" ref={userMessageRef}/>
+                        <label htmlFor="msg" className="input-label">Enter Your message</label>
                     </div>
 
                     <button className="submit" onClick={submit}>Add Name</button>
