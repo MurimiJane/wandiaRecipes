@@ -57,7 +57,7 @@ function Footerm() {
                     </div>
 
                     <button className="submit" onClick={submit}>Add Name</button>
-                    <button className="submit" onClick={submit} >Submit</button>
+                    <button className="submit" onClick={handleSubmit} >Submit</button>
 
                    
 
