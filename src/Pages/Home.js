@@ -52,6 +52,8 @@ function Home() {
                     <div className="section3">
                     <h2>Feedback</h2>
                     <p>Feedback will appear here</p>
+                    <p> <h1>{animal}</h1>
+                    <h1>{msg}</h1></p>
                     </div>
 
                     <div className="section4">
