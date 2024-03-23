@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { useHistory } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import herName from '../Images/icons8-woman-64.png'
 import email from '../Images/gmail.svg'
@@ -16,14 +15,6 @@ function Footerm() {
     const [animal, setAnimal] = useState(" ")
     const [msg, setMsg] = useState(" ")
     const [result, setResults] = useState([])
-    const history = useHistory();
-
-   
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Navigate to the output page with the input data
-    history.push(`/?data=${animal}`);
-  };
 
 
     function submit() {
@@ -58,7 +49,7 @@ function Footerm() {
                     </div>
 
                     <button className="submit" onClick={submit}>Add Name</button>
-                    <button className="submit" onClick={handleSubmit} >Submit</button>
+                    <button className="submit" onClick={submit} >Submit</button>
 
                    
 
