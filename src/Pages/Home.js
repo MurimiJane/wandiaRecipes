@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useLocation } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footerm';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,9 +8,6 @@ import Button from 'react-bootstrap/Button';
 
 
 function Home() {
-   const location = useLocation();
-  const animal = new URLSearchParams(location.search).get('data');
-    const msg = new URLSearchParams(location.search).get('data');
   
             return (
                 <div style={{ fontFamily: 'Megante' }} className="App">
@@ -56,8 +52,7 @@ function Home() {
                     <div className="section3">
                     <h2>Feedback</h2>
                     <p>Feedback will appear here</p>
-                    <p> <h1>{animal}</h1>
-                    <h1>{msg}</h1></p>
+               
                     </div>
 
                     <div className="section4">
