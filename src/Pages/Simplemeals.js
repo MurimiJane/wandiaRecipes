@@ -317,7 +317,7 @@ function Simplemeals() {
         </Slider>
       </div>
 
-      <div className="section3">
+      <div className="section4">
         <Footer />
       </div>
     </div>

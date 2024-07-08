@@ -1,0 +1,74 @@
+// // Home.js
+// import React, { useState } from 'react';
+// import FeedbackForm from './FeedbackForm';
+// import FeedbackDisplay from './FeedbackDisplay';
+
+// const App = () => {
+//   const [feedbackList, setFeedbackList] = useState([]);
+
+//   const addFeedback = (feedback) => {
+//     setFeedbackList([...feedbackList, feedback]);
+//   };
+
+//   return (
+//     <div className="app-container">
+//       <div className="form-section">
+//         <FeedbackForm addFeedback={addFeedback} />
+//       </div>
+//       <div className="display-section">
+//         <FeedbackDisplay feedbackList={feedbackList} />
+//       </div>
+//     </div>
+//   );
+// };
+
+
+
+// //feedback page.js
+// import React, { useState } from 'react';
+
+// const FeedbackForm = ({ addFeedback }) => {
+//   const [feedbackText, setFeedbackText] = useState('');
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     if (feedbackText.trim() !== '') {
+//       addFeedback(feedbackText);
+//       setFeedbackText('');
+//     }
+//   };
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <textarea
+//         value={feedbackText}
+//         onChange={(e) => setFeedbackText(e.target.value)}
+//         placeholder="Enter your feedback..."
+//         required
+//       />
+//       <button type="submit">Submit Feedback</button>
+//     </form>
+//   );
+// };
+
+
+// //display.js
+// import React from 'react';
+
+// const FeedbackDisplay = ({ feedbackList }) => {
+//   return (
+//     <div>
+//       <h2>Feedback Received:</h2>
+//       <ul>
+//         {feedbackList.map((feedback, index) => (
+//           <li key={index}>{feedback}</li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
+
+// export default FeedbackDisplay;
+
+
+

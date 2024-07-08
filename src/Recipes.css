@@ -70,7 +70,6 @@ color:white;
 }
 
 .section2{
-    height: 220vh;
     display: flex;
     flex-direction: column;
     height:fit-content;
