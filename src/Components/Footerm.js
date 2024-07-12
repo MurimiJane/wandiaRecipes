@@ -1,12 +1,20 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import herName from '../Images/icons8-woman-64.png'
-import email from '../Images/gmail.svg'
-import phone from '../Images/phone.svg'
+import herName from '../Images/icons8-woman-64.png';
+import email from '../Images/gmail.svg';
+import phone from '../Images/phone.svg';
 
 
 
-function Footerm() {
+function Footerm({ onFeedbackSubmit }) {
+    const [feedback, setFeedback] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        onFeedbackSubmit(feedback);
+        setFeedback('');
+    };
+
     //get data from input userName
     const userNameRef = useRef();
     const userMessageRef = useRef();
@@ -22,7 +30,7 @@ function Footerm() {
         const theMessage = userMessageRef.current.value;
         //show the data here
         setAnimal(theName)
-         setMsg(theMessage)
+        setMsg(theMessage)
     }
 
 
@@ -38,20 +46,28 @@ function Footerm() {
                 <div className="feedback">
                     <h1>Give me your feedback</h1>
                     <br></br>
-                    <div className="input-tab nametab">
-                        <input type="text" id="fullname" required className="input nametab" ref={userNameRef} />
-                        <label htmlFor="fullname" className="input-label">Enter your full name</label>
-                    </div> 
+                    <form onSubmit={handleSubmit}>
+                        <div className="input-tab nametab">
+                            <input type="text" id="fullname" required className="input nametab" ref={userNameRef} />
+                            <label htmlFor="fullname" className="input-label">Enter your full name</label>
+                        </div>
 
-                    <div className="input-tab ">
-                        <input type="text" id="msg" required className="input msgtab" ref={userMessageRef}/>
-                        <label htmlFor="msg" className="input-label">Enter Your message</label>
-                    </div>
+                        <div className="input-tab ">
+                            <input type="text" id="msg" required className="input msgtab" ref={userMessageRef} />
+                            <label htmlFor="msg" className="input-label">Enter Your message</label>
+                        </div>
 
-                    <button className="submit" onClick={submit}>Add Name</button>
-                    <button className="submit" onClick={submit} >Submit</button>
+                        <textarea
+                            value={feedback}
+                            onChange={(e) => setFeedback(e.target.value)}
+                            placeholder="Enter your feedback..."
+                            required
+                        />
 
-                   
+                        <button className="submit" onClick={submit}>Add Name</button>
+                        <button className="submit" type="submit" onClick={submit} >Submit</button>
+
+                    </form>
 
                 </div>
 

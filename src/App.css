@@ -150,7 +150,7 @@ body {
 .container1 {
   background-image: url(./Images/saladbg.jpg);
   background-size: cover;
-  width: 310px;
+  width: 280px;
   height: 40vh;
   border-radius: 30px;
   text-align: center;
@@ -164,7 +164,7 @@ body {
 .container2 {
   background-image: url(./Images/mealsbg.jpg);
   background-size: cover;
-  width: 310px;
+  width: 280px;
   height: 40vh;
   border-radius: 30px;
   text-align: center;
@@ -178,7 +178,7 @@ body {
 .container3 {
   background-image: url(./Images/chickenbg.jpg);
   background-size: cover;
-  width: 310px;
+  width: 280px;
   height: 40vh;
   border-radius: 30px;
   text-align: center;
@@ -193,7 +193,7 @@ body {
 .container4 {
   background-image: url(./Images/coffeebg.jpg);
   background-size: cover;
-  width: 310px;
+  width: 280px;
   height: 40vh;
   border-radius: 30px;
   text-align: center;
