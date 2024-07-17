@@ -57,7 +57,6 @@ function Home() {
 
                 <div className="section3">
                     <h2>Feedback</h2>
-                    <p>Feedback will appear here</p>
                     <ul>
                     {feedbackList.map((feedback, index) => (
                         <li key={index}>{feedback}</li>

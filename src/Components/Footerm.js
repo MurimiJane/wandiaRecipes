@@ -53,16 +53,12 @@ function Footerm({ onFeedbackSubmit }) {
                         </div>
 
                         <div className="input-tab ">
-                            <input type="text" id="msg" required className="input msgtab" ref={userMessageRef} />
-                            <label htmlFor="msg" className="input-label">Enter Your message</label>
-                        </div>
-
-                        <textarea
-                            value={feedback}
+                            <input type="text" id="msg" value={feedback}
                             onChange={(e) => setFeedback(e.target.value)}
                             placeholder="Enter your feedback..."
-                            required
-                        />
+                            required className="input msgtab" ref={userMessageRef} />
+                            <label htmlFor="msg" className="input-label">Enter Your message</label>
+                        </div>
 
                         <button className="submit" onClick={submit}>Add Name</button>
                         <button className="submit" type="submit" onClick={submit} >Submit</button>
