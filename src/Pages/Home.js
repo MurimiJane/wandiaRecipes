@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 
 function Home() {
 
-        const [feedbackList, setFeedbackList] = useState([]);
+        const [feedbackList,setFeedbackList] = useState([]);
     
         const handleFeedbackSubmit = (feedback) => {
             setFeedbackList([...feedbackList, feedback]);
