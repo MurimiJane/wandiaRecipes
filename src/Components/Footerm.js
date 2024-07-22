@@ -7,12 +7,12 @@ import phone from '../Images/phone.svg';
 
 
 function Footerm({ onFeedbackSubmit }) {
-    const [feedback, setFeedback] = useState('');
+    const [newFeedback, setNewFeedback] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onFeedbackSubmit(feedback);
-        setFeedback('');
+        onFeedbackSubmit(newFeedback);
+        setNewFeedback('');
     };
 
     //get data from input userName
@@ -53,8 +53,8 @@ function Footerm({ onFeedbackSubmit }) {
                         </div>
 
                         <div className="input-tab ">
-                            <input type="text" id="msg" value={feedback}
-                            onChange={(e) => setFeedback(e.target.value)}
+                            <input type="text" id="msg" value={newFeedback}
+                            onChange={(e) => setNewFeedback(e.target.value)}
                             placeholder="Enter your feedback..."
                             required className="input msgtab" ref={userMessageRef} />
                             <label htmlFor="msg" className="input-label">Enter Your message</label>

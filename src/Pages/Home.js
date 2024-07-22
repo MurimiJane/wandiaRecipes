@@ -10,8 +10,8 @@ function Home() {
 
         const [feedbackList,setFeedbackList] = useState([]);
     
-        const handleFeedbackSubmit = (feedback) => {
-            setFeedbackList([...feedbackList, feedback]);
+        const handleFeedbackSubmit = (newFeedback) => {
+            setFeedbackList([...feedbackList, newFeedback]);
         };
 
     
