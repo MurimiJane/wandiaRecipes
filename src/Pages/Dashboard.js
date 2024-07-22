@@ -56,7 +56,7 @@ function Dashboard() {
         <div className='Dashboard'>
 
             <Button className="btn btn-primary" onClick={handleShow}>
-                Add Recipe
+                Add Recipes
             </Button>
 
             <Modal show={show} onHide={handleClose} animation={false}>
