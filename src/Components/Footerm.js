@@ -55,7 +55,7 @@ function Footerm({ onFeedbackSubmit }) {
                         <div className="input-tab ">
                             <input type="text" id="msg" value={newFeedback}
                             onChange={(e) => setNewFeedback(e.target.value)}
-                            placeholder="Leave your feedback..."
+                            placeholder="Leave me your feedback "
                             required className="input msgtab" ref={userMessageRef} />
                             <label htmlFor="msg" className="input-label">Enter Your message</label>
                         </div>
