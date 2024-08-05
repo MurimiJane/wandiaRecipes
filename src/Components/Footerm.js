@@ -49,7 +49,7 @@ function Footerm({ onFeedbackSubmit }) {
                     <form onSubmit={handleSubmit}>
                         <div className="input-tab nametab">
                             <input type="text" id="fullname" required className="input nametab" ref={userNameRef} />
-                            <label htmlFor="fullname" className="input-label">Enter your full name</label>
+                            <label htmlFor="fullname" className="input-label">Type in your name</label>
                         </div>
 
                         <div className="input-tab ">
