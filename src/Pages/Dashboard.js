@@ -40,7 +40,7 @@ function Dashboard() {
 
 
         }).then(() => {
-            toast.success("New recipe added ")
+            toast.success("New recipe successfully added")
             console.log("Recipe added")
         }).catch((error) => {
             const errorMessage = error.message;
