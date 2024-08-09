@@ -61,7 +61,7 @@ function Dashboard() {
 
             <Modal show={show} onHide={handleClose} animation={false}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Add Recipe</Modal.Title>
+                    <Modal.Title>Add Recipes</Modal.Title>
                     <ToastContainer />
                 </Modal.Header>
 
