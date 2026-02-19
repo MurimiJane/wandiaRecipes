@@ -1,100 +1,81 @@
-import React, { useRef, useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import herName from '../Images/icons8-woman-64.png';
-import email from '../Images/gmail.svg';
-import phone from '../Images/phone.svg';
+import React, { useState } from "react";
+import { FaUser, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
+function Footer({ onFeedbackSubmit }) {
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-function Footerm({ onFeedbackSubmit }) {
-    const [newFeedback, setNewFeedback] = useState('');
+    if (!name || !message) return;
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        onFeedbackSubmit(newFeedback);
-        setNewFeedback('');
-    };
+    onFeedbackSubmit(name, message);
 
-    //get data from input userName
-    const userNameRef = useRef();
-    const userMessageRef = useRef();
+    setName("");
+    setMessage("");
+  };
 
-    //setting data to h1
-    const [animal, setAnimal] = useState(" ")
-    const [msg, setMsg] = useState(" ")
-    const [result, setResults] = useState([])
+  return (
+    <>
+      <div className="footer">
+        {/* FEEDBACK FORM */}
+        <form className="feedback" onSubmit={handleSubmit}>
+          <h3>Leave Feedback</h3>
 
+          <div className="input-tab">
+            <input
+              type="text"
+              className="input"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+            <label className="input-label">Your Name</label>
+          </div>
 
-    function submit() {
-        const theName = userNameRef.current.value;
-        const theMessage = userMessageRef.current.value;
-        //show the data here
-        setAnimal(theName)
-        setMsg(theMessage)
-    }
+          <div className="input-tab">
+            <textarea
+              className="input msgtab"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
+            />
+            <label className="input-label">Your Feedback</label>
+          </div>
 
+          <button type="submit" className="submit">
+            Submit
+          </button>
+        </form>
 
-    function passdata() {
-        const theMessage = userMessageRef.current.value;
-        //show the data here
-        setMsg(theMessage)
-    }
+        {/* CONTACT INFO */}
+       <div className="contacts">
+        <h3>Contacts</h3>
+  <div className="name">
+    <FaUser className="contact-icon" />
+    <p>Faith Wandia</p>
+  </div>
 
-    return (
-        <div>
-            <div className="footer">
-                <div className="feedback">
-                    <h1>Give me your feedback</h1>
-                    <br></br>
-                    <form onSubmit={handleSubmit}>
-                        <div className="input-tab nametab">
-                            <input type="text" id="fullname" required className="input nametab" ref={userNameRef} />
-                            <label htmlFor="fullname" className="input-label">Type in your name</label>
-                        </div>
+  <div className="phone">
+    <FaPhoneAlt className="contact-icon" />
+    <p>+254 700 000 000</p>
+  </div>
 
-                        <div className="input-tab ">
-                            <input type="text" id="msg" value={newFeedback}
-                            onChange={(e) => setNewFeedback(e.target.value)}
-                            placeholder="Feedback would be appreciated"
-                            required className="input msgtab" ref={userMessageRef} />
-                            <label htmlFor="msg" className="input-label">Enter Your message</label>
-                        </div>
+  <div className="gmail">
+    <FaEnvelope className="contact-icon" />
+    <p>cookwithwandia@gmail.com</p>
+  </div>
+</div>
 
-                        <button className="submit" onClick={submit}>Add Name</button>
-                        <button className="submit" type="submit" onClick={submit} >Submit</button>
+      </div>
 
-                    </form>
-
-                </div>
-
-                <div className="contacts">
-                    <div className='name'>
-                        <div className='contactsBtn eclipse4 btn'>
-                            <img src={herName} className="rounded-lg" />
-                        </div>
-                        <p>Faith Wandia</p>
-
-                    </div>
-
-                    <div className='phone'>
-                        <div className='contactsBtn eclipse4 btn'>
-                            <img src={phone} className="rounded-lg" />
-                        </div>
-                        <p>07233455678</p>
-
-                    </div>
-
-                    <div className='gmail'>
-                        <div className='contactsBtn eclipse4 btn'>
-                            <img src={email} className="rounded-lg" />
-                        </div>
-                        <p>faithwandia@gmail.com</p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
+      {/* COPYRIGHT */}
+      <div className="copyright">
+        © 2026 Recipes by Wandia. All rights reserved.
+      </div>
+    </>
+  );
 }
 
-export default Footerm
+export default Footer;
