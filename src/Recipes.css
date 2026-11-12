@@ -1,153 +1,266 @@
-.saladsection{
-    width:100%;
-    height:55vh;
-    background-image: url(./Images/salad.jpg);
-    background-size: cover;
-    background-position: top;
+/* =====================================================================
+   Recipes.css: shared by Salads, Chickenmeals, Simplemeals and Coffee.
+   Uses the colour variables defined in App.css (:root).
+   Sections: 1) hero banners  2) recipe browser  3) mobile  4) print
+   ===================================================================== */
+
+
+/* ---------------------------------------------------------------------
+   1) HERO BANNERS
+   Same treatment on every page: photo + dark overlay so the white title
+   stays readable, a minimum height instead of a fixed one, and a title
+   that scales with the screen. Only the photo and the title's position
+   differ per page.
+   --------------------------------------------------------------------- */
+.saladsection,
+.chickensection,
+.Simplemealssec,
+.coffeeSection {
+  width: 100%;
+  min-height: 55vh;
+  padding-bottom: 3rem;
+  background-size: cover;
+  background-position: center;
 }
 
-.saladsection h1{
-    font-size:100px;
-    color:white;
-    margin-top: 10vh;
-    margin-left:10%;
+.saladsection h1,
+.chickensection h1,
+.Simplemealssec h1,
+.coffeeSection h1 {
+  margin: 0;
+  padding-top: clamp(2rem, 10vh, 6rem);
+  font-size: clamp(2.75rem, 9vw, 6.25rem);
+  line-height: 1.05;
+  color: #fff;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
 }
 
-.chickensection{
-    width:100%;
-    height:55vh;
-    background-image:url(./Images/chicken.jpg);
-    background-size: cover;
+/* Per-page photo and title position */
+.saladsection {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(./Images/salad.jpg);
+  background-position: top;
+}
+.saladsection h1 { margin-left: 10%; }
 
+.chickensection {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(./Images/chicken.jpg);
+}
+.chickensection h1 { padding-right: 16%; text-align: right; }
+
+.Simplemealssec {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(./Images/Simple\ meals.jpg);
+}
+.Simplemealssec h1 { margin-left: 6%; }
+
+.coffeeSection {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(./Images/coffee2.webp);
+}
+.coffeeSection h1 { margin-left: 17%; }
+
+
+/* ---------------------------------------------------------------------
+   2) RECIPE BROWSER (all classes start with rp-)
+   --------------------------------------------------------------------- */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-.chickensection h1{
-    display: flex;
-    justify-content: right;
-    font-size: 90px;
-    color: white;
-    padding-right:16%;
-    padding-top:10vh;
+.rp-section {
+  background: var(--w-bg);
+  padding: clamp(2rem, 6vw, 4.5rem) 1.25rem;
+}
+.rp-wrap { max-width: 1000px; margin: 0 auto; }
+
+/* Toolbar */
+.rp-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.rp-search { flex: 1 1 260px; }
+.rp-search input {
+  width: 100%;
+  padding: 0.65rem 1.1rem;
+  border: 1px solid var(--w-line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--w-ink);
+  font-family: inherit;
+  font-size: 1rem;
+}
+.rp-search input:focus {
+  outline: none;
+  border-color: var(--w-red);
+  box-shadow: 0 0 0 3px rgba(214, 4, 4, 0.15);
+}
+.rp-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--w-ink);
+  cursor: pointer;
+}
+.rp-check input { accent-color: var(--w-red); }
+
+/* Recipe picker */
+.rp-picker { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
+.rp-chip {
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--w-line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--w-ink);
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.rp-chip:hover { border-color: var(--w-red); }
+.rp-chip[aria-pressed="true"] { background: var(--w-red); border-color: var(--w-red); color: #fff; }
+.rp-chip-saved { font-size: 0.85em; }
+
+/* Recipe card */
+.rp-recipe {
+  background: #fff;
+  border-radius: 24px;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+.rp-recipe-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--w-line);
+}
+.rp-recipe-head h2 {
+  margin: 0;
+  color: var(--w-red);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.1;
+}
+.rp-meta { margin: 0.4rem 0 0; color: var(--w-muted); }
+
+.rp-actions { display: flex; gap: 0.5rem; }
+.rp-btn {
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--w-line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--w-ink);
+  font-family: inherit;
+  cursor: pointer;
+}
+.rp-btn:hover { border-color: var(--w-red); color: var(--w-red); }
+.rp-btn[aria-pressed="true"] { background: var(--w-red); border-color: var(--w-red); color: #fff; }
+
+/* Ingredients on the left, method on the right */
+.rp-body { display: grid; gap: 2rem; grid-template-columns: 1fr; }
+@media (min-width: 800px) {
+  .rp-body { grid-template-columns: 320px 1fr; gap: 3rem; }
+  .rp-ingredients { position: sticky; top: 1.5rem; align-self: start; }
 }
 
-.chickenintro{
-margin-left: 50%;
-margin-top:10vh;
+.rp-body h3 { font-size: 1.3rem; margin: 0 0 0.5rem; }
+.rp-progress { color: var(--w-muted); margin: 0 0 0.75rem; font-size: 0.95rem; }
+
+.rp-ingredients ul, .rp-steps ol { margin: 0; padding: 0; }
+.rp-ingredients ul { list-style: none; margin-bottom: 0.75rem; }
+.rp-ingredients li { padding: 0.45rem 0; border-bottom: 1px dashed var(--w-line); }
+
+.rp-stage + .rp-stage { margin-top: 1.75rem; }
+.rp-stage h4 { font-size: 1.1rem; margin: 0 0 0.5rem; color: var(--w-red); }
+.rp-steps ol { padding-left: 1.4rem; }
+.rp-steps li { padding: 0.35rem 0 0.35rem 0.4rem; margin-bottom: 0.5rem; line-height: 1.65; }
+.rp-steps li::marker { color: var(--w-red); font-weight: bold; }
+
+.rp-body label { display: flex; align-items: flex-start; gap: 0.7rem; cursor: pointer; }
+.rp-body label input {
+  flex-shrink: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.3rem;
+  accent-color: var(--w-red);
+}
+.rp-body label.is-done span { color: #9a9a9a; text-decoration: line-through; }
+
+.rp-tip {
+  margin: 1.5rem 0 0;
+  padding: 1rem 1.25rem;
+  background: var(--w-bg-alt);
+  border-left: 4px solid var(--w-red);
+  border-radius: 0 12px 12px 0;
+  line-height: 1.6;
+}
+
+.rp-pager {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--w-line);
+}
+
+.rp-empty {
+  padding: 2.5rem 1.5rem;
+  border: 2px dashed #d9d2d2;
+  border-radius: 22px;
+  text-align: center;
+  color: var(--w-muted);
+}
+.rp-empty p { margin-bottom: 1rem; }
+
+.rp-chip:focus-visible,
+.rp-btn:focus-visible { outline: 3px solid var(--w-gold); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rp-chip { transition: none; }
 }
 
 
-.chickenintro h1{
-font-size: 70px;
-color:white;
-}
+/* ---------------------------------------------------------------------
+   3) SMALL SCREENS
+   --------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  /* titles move closer to the edge so long ones don't wrap awkwardly */
+  .saladsection h1,
+  .Simplemealssec h1,
+  .coffeeSection h1 { margin-left: 6%; }
+  .chickensection h1 { padding-right: 6%; }
 
-.Simplemealssec{
-    width:100%;
-    height:55vh;
-    background-image: url(./Images/Simple\ meals.jpg);
-    background-size: cover;
-}
-
-.Simplemealssec h1{
-    font-size:100px;
-    color:white;
-    margin-top: 10vh;
-    margin-left:6%;
-}
-
-.coffeeSection{
-    width:100%;
-    height:55vh;
-    background-image: url(./Images/coffee2.webp);
-    background-size: cover;
-}
-
-.coffeeSection h1{
-    font-size:100px;
-    color:white;
-    margin-top: 10vh;
-    margin-left:17%;
-}
-
-.section2{
-    display: flex;
-    flex-direction: column;
-    height:fit-content;
-    background-color: rgb(247, 247, 242);
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 7vh;
-}
-
-.section2 h1{
-    color:black;
-}
-
-/*styling recipe container*/
-.recipe-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    transition: transform 0.5s ease-in-out;
-  
+  /* one scrolling row of recipe chips instead of many wrapped rows */
+  .rp-picker {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
   }
-  
-  .recipe-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 16px;
-    width: 180vh;
-    height: 120vh;
-    text-align: center;
-  
-  }
-
-.recipe-card h2{
-    margin-bottom:4vh;
+  .rp-chip { flex: 0 0 auto; white-space: nowrap; }
 }
 
-.mainRecipesBox{
-    display:flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
 
-}
-
-.ingredientsBox{
-/*background: rgba(255, 253, 254, 0.5);
-box-shadow: 0 15px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 7.5px );
--webkit-backdrop-filter: blur( 7.5px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );*/
-padding-left: 6vh;
-margin-bottom:4vh;
-width:50vh;
-text-align: center;
-
-}
-
-hr{
-    border: 1px solid #000; /* Set border properties as needed */
-    margin: 10px 0; 
-    color:black;
-    height: 2px;
-    width:100%;
-}
-
-.instructionsBox{
-    margin-bottom:2vh;
-    /*background: rgba(248, 248, 248, 0.25);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 7.5px );
-    -webkit-backdrop-filter: blur( 7.5px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );*/
-}
-
-.section3{
-    width: 100%;
-    height:80vh;
+/* ---------------------------------------------------------------------
+   4) PRINT: only the recipe
+   --------------------------------------------------------------------- */
+@media print {
+  .rp-page > :not(.rp-section) { display: none !important; }
+  .rp-toolbar, .rp-picker, .rp-actions, .rp-pager,
+  .rp-ingredients .btn-quiet, .rp-progress { display: none !important; }
+  .rp-section { padding: 0; background: #fff; }
+  .rp-recipe { box-shadow: none; padding: 0; }
+  .rp-body { grid-template-columns: 1fr; }
+  .rp-ingredients { position: static; }
 }

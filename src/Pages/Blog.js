@@ -1,88 +1,89 @@
-import Home from "./Home"
-import '../App.css';
-import myimg from '../Images/wandia.png'
-import Navbar from '../Components/Navbar';
+import React from "react";
+import { Link } from "react-router-dom";
+import "../App.css";
+import wandiaPhoto from "../Images/wandia.png";
+import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footerm";
 
+const pillars = [
+  {
+    title: "Culinary passion",
+    text: "Wandia is a passionate chef with a love for creating memorable culinary experiences.",
+  },
+  {
+    title: "Culinary inspiration",
+    text: "My recipes are inspired by a rich tapestry of flavours from different cultures.",
+  },
+  {
+    title: "Welcome to the journey",
+    text: "Join Wandia on a journey through a world of delectable dishes and gastronomical delights.",
+  },
+];
 
-function App() {
-
+function Blog() {
   return (
-    <div style={{ fontFamily: 'Megante' }} className="App">
-      <div className="section1blog">
+    <div style={{ fontFamily: "Megante" }} className="App">
+      {/* Hero */}
+      <header className="blog-hero">
         <Navbar />
-        <div className="title">
-          <div>
-            <h1 className="faithName text-center p-4 mt-3  text-white">Faith Wandia</h1>
+        <div className="blog-hero-body">
+          <div className="blog-hero-text">
+            <h1>Faith Wandia</h1>
+            <p>A cook who finds cooking therapeutic.</p>
           </div>
+          <img
+            src={wandiaPhoto}
+            className="blog-hero-img"
+            alt="Portrait of Faith Wandia"
+          />
+        </div>
+      </header>
 
-          <img src={myimg} className="faithImg" />
+      {/* Note from Wandia */}
+      <section className="blog-note" aria-labelledby="blog-note-title">
+        <blockquote className="blog-letter">
+          <h2 id="blog-note-title">A light note from Wandia</h2>
+          <p>
+            This is a PDF cookbook dedicated to everyone who loves cooking and
+            finds it therapeutic. It’s a collection of 34 recipes that I have
+            tried and that have worked out well.
+          </p>
+          <p>
+            I hope it helps you step out of your comfort zone in the kitchen:
+            learn new ideas, enjoy a wider variety of food and cook in
+            different styles.
+          </p>
+          <p className="blog-sign">
+            Yours truly,
+            <br />
+            Wandia
+          </p>
+        </blockquote>
+      </section>
 
+      {/* What Wandia is about */}
+      <section className="blog-pillars">
+        <div className="blog-pillars-grid">
+          {pillars.map((p) => (
+            <article key={p.title} className="blog-pillar">
+              <h2>{p.title}</h2>
+              <p>{p.text}</p>
+            </article>
+          ))}
         </div>
 
-
-        {/*<div className="container my-4 mx-4 bg-orange-200">
-          <p>Loreum Ipsum</p>
-  </div>*/}
-
-      </div>
-      <div className="section2blog">
-        <div className="prologue">
-          <h2 className="prologuehead">Light note from Wandia</h2>
-          <p>"This is a pdf cook book that is dedicated
-            to all the people that love cooking and
-            find cooking therapeutic. It's a collection of 34 recipes that I have tried and have worked out pretty
-            well. Hope it helps you to get out of your comfort zone when it comes to cooking.
-            Learn new ideas of cooking Enjoy different variety of food.
-            Cooked in different styles.
-
-            Yours Truly
-
-            Wandia"</p>
+        <div className="blog-cta">
+          <Link to="/#Categories" className="btn-wandia">
+            Browse the recipes
+          </Link>
         </div>
-      </div>
-      <div className="section3blog flex justify-center ">
-
-      <div className="Culinary">
-      <div className="CulinaryPassion">
-      <h2>Culinary Passion</h2>
-      <h3>
-      Wandia is a passionate chef with a love for creating memorable culinary experiences.
-      </h3>
-
-      </div>
-
-      <div className="CulinaryInspiration">
-      <h2>Culinary Inspiration</h2>
-      <h3>
-      My recipes are inspired by a rich tapestry of flavors from different cultures.
-      </h3>
-
-      </div>
-
-      <div className="Welcome">
-      <h2>Welcome to the journey</h2>
-      <h3>
-      Join Wandia on a journey through a world of delectable dishes and gastronomical delights.
-      </h3>
-
-      </div>
-      </div>
-
-
-        <h1>  </h1>
-      </div>
+      </section>
 
       <div className="section4">
         <Footer />
       </div>
     </div>
-
-
-
-
   );
-
 }
 
-export default App;
+export default Blog;
