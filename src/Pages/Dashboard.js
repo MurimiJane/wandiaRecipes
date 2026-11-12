@@ -6,8 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Button from 'react-bootstrap/Button';
 import '../firebaseConfig';
 import { db } from '../firebaseConfig';
-import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import { doc, addDoc, collection, query, where, getDocs } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 
 function Dashboard() {
     
