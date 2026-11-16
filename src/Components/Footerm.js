@@ -6,7 +6,7 @@ const phone = "+254 736 285 117";
 const email = "hello@example.com";
 const socials = [
   { label: "Instagram", href: "https://instagram.com/" },
-  { label: "TikTok",    href: "https://tiktok.com/" },
+  { label: "TikTok",    href: "https://www.tiktok.com/@thecookinglab?_r=1&_t=ZS-9BRsg3D2QS5" },
   { label: "YouTube",   href: "https://youtube.com/" },
 ];
 

@@ -509,6 +509,7 @@ body {
   max-width: 480px;
   max-height: 75vh;
   object-fit: contain;
+  margin: right 0vh;
   object-position: bottom;
 }
 
