@@ -478,18 +478,19 @@ body {
   flex: 1;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: end;
   gap: 1rem;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 clamp(1.25rem, 5vw, 3.5rem);
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .blog-hero-text { align-self: center; padding: 2rem 0; }
 .blog-hero-text h1 {
   margin: 0 0 1.25rem;
+  margin-left:15vh;
   font-size: clamp(3rem, 9vw, 7rem);
   line-height: 1;
   color: #fff;
@@ -497,6 +498,7 @@ body {
 .blog-hero-text p {
   max-width: 28ch;
   margin: 0;
+  margin-left:15vh;
   font-size: clamp(1.1rem, 2vw, 1.4rem);
   line-height: 1.4;
   color: rgba(255, 255, 255, 0.8);
@@ -504,13 +506,13 @@ body {
 
 .blog-hero-img {
   display: block;
-  justify-self: center;
+  justify-self: end;
   width: 100%;
   max-width: 480px;
   max-height: 75vh;
   object-fit: contain;
-  margin: right 0vh;
-  object-position: bottom;
+  object-position: bottom right;
+  margin: 0;
 }
 
 @media (min-width: 860px) {
